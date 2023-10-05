@@ -9,22 +9,29 @@
     <script scr="./js/script.js" defer></script>
 
     <title>mario jump</title>
+    
 </head>
+
 <body>
     
     <div class="game-board">
         <img src="mario gif.gif" class="mario">
         <img src="pipe mario.png" class="pipe">
-
-
-
-
-
-
+        <img src="pngwing.com.png" class="clouds">
+        <img src="pngwing.com (1).png" class="cloudstwo">
+        
+        
     </div>
+
+        
 </body>
 <script>
     const mario = document.querySelector('.mario');
+    const pipe = document.querySelector('.pipe');
+    const clouds = document.querySelector('.clouds');
+    const cloudstwo = document.querySelector('.cloudstwo');
+    
+   
 
     function jump () {
         mario.classList.add('jump') 
@@ -35,6 +42,53 @@
     }
 
     document.addEventListener('keydown', jump);
+
+    const loop = setInterval(() => {
+
+        console.log('loop')
+
+        const pipePosition = pipe.offsetLeft;
+        const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+        const cloudsPosition = clouds.offsetLeft;
+        const cloudstwoPosition = cloudstwo.offsetLeft;
+        
+        console.log(marioPosition);
+
+        if(pipePosition <= 80 && pipePosition > 0 && marioPosition < 56 ) {
+            pipe.style.animation = 'none';
+            pipe.style.left = `${pipePosition}px`;
+
+            mario.style.animation = 'none';
+            mario.style.bottom = `${marioPosition}px`;
+
+            mario.src ='game.over.mario.png';
+            mario.style.width = '50px';
+            mario.style.marginLeft = '30px';
+
+           clouds.style.animation = 'none';
+           clouds.style.left = `${cloudsPosition}px`;
+
+           cloudstwo.style.animation = 'none';
+           cloudstwo.style.left = `${cloudstwoPosition}px`;
+
+           
+
+        
+            
+
+            clearInterval(loop);
+
+        }
+
+        
+        
+
+
+
+    }, 10)
+
+    
+    
 </script>
 
 
