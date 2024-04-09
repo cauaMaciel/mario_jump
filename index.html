@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <div id="título">
+        <h1>Mario Jump</h1>
+    </div>
     
     <div class="game-board">
         <img src="mario gif.gif" class="mario">
@@ -21,7 +24,12 @@
         <img src="pngwing.com (1).png" class="cloudstwo">
         
         
+        
     </div>
+
+    <footer>
+        <p>&copy;CauaLeicam</p>
+    </footer>
 
         
 </body>
@@ -51,6 +59,7 @@
         const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
         const cloudsPosition = clouds.offsetLeft;
         const cloudstwoPosition = cloudstwo.offsetLeft;
+        const gameover = window.
         
         console.log(marioPosition);
 
@@ -71,6 +80,10 @@
            cloudstwo.style.animation = 'none';
            cloudstwo.style.left = `${cloudstwoPosition}px`;
 
+
+            
+
+
            
 
         
@@ -78,7 +91,7 @@
 
             clearInterval(loop);
 
-        }
+        } 
 
         
         
@@ -87,6 +100,8 @@
 
     }, 10)
 
+    
+        
     
     
 </script>
